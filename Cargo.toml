@@ -5,7 +5,7 @@ license = "MIT"
 repository = "https://github.com/micromaomao/ctclient"
 version = "0.4.5"
 authors = ["Mao Wtm <m@maowtm.org>"]
-edition = "2018"
+edition = "2021"
 documentation = "https://docs.rs/ctclient"
 readme = "README.md"
 
@@ -14,15 +14,21 @@ name = "simple_client"
 path = "examples/simple_client/simple_client.rs"
 
 [dependencies]
-reqwest = { version = "0.10.4", default-features = false, features = ["blocking", "native-tls", "gzip", "json"] }
+reqwest = { version = "0.10.4", default-features = false, features = [
+    "blocking",
+    "native-tls",
+    "gzip",
+    "json",
+] }
 serde = { version = "1.0.97", features = ["derive"] }
 serde_json = "1.0.40"
 serde_urlencoded = "0.6.1"
-base64 = "0.12.1"
+base64 = "0.21.0"
 openssl = "0.10.24"
 foreign-types = "0.3.2"
-openssl-sys = "0.9.56"
+openssl-sys = "0.9.72"
 log = "0.4.7"
+chrono = "0.4"
 lazy_static = "1.4.0"
 
 [dev-dependencies]
@@ -31,4 +37,4 @@ env_logger = "0.7.1"
 rusqlite = "0.23.1"
 
 [build-dependencies]
-openssl-sys = "0.9.56"
+openssl-sys = "0.9.72"
